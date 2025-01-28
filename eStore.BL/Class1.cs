@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace eStore.BL
+﻿namespace eStore.BL
 {
     public class Class1
     {
