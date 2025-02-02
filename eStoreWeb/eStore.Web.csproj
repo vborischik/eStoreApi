@@ -7,13 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="MySql.Data" Version="9.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Areas\Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\eStore.DAL\eStore.DAL.csproj" />
+    <ProjectReference Include="..\eStore.BL\eStore.BL.csproj" />
+    <ProjectReference Include="..\eStore.Common\eStore.Common.csproj" />
   </ItemGroup>
 
 </Project>

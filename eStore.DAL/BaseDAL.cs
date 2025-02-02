@@ -8,7 +8,17 @@ using MySql.Data.MySqlClient;
 
 namespace eStore.DAL
 {
-   
+
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Threading.Tasks;
+    using Dapper;
+    using MySql.Data.MySqlClient;
+    using Microsoft.Extensions.Configuration;
+
+    namespace eStore.DAL
+    {
         public abstract class BaseDAL
         {
             private readonly string _connectionString;
@@ -31,7 +41,7 @@ namespace eStore.DAL
             protected IDbConnection CreateConnection()
             {
                 return new MySqlConnection(_connectionString);
-        }
+            }
 
             /// <summary>
             /// Executes a query and returns a collection of results.
@@ -77,37 +87,39 @@ namespace eStore.DAL
                 }
             }
         }
-
-
-
-        //public virtual int DefaultCommandTimeOut
-        //{
-        //    get { return 1200; }
-        //}
-
-        //public virtual DbConnection DefaultConnection
-        //{
-        //    get
-        //    {
-        //        var connectionString = ConfigurationManager.ConnectionStrings["Default"];
-
-        //        return CreateConnection(connectionString);
-        //    }
-        //}
-
-        //public virtual DbConnection CreateConnection(ConnectionStringSettings connectionString)
-        //{
-        //    var providerName = connectionString.ProviderName;
-
-        //    if (string.IsNullOrWhiteSpace(providerName))
-        //        providerName = "System.Data.SqlClient";
-
-        //    var factory = DbProviderFactories.GetFactory(providerName);
-        //    var connection = factory.CreateConnection();
-        //    connection.ConnectionString = connectionString.ConnectionString;
-
-        //    return connection;
-        //}
-    
-
+    }
 }
+
+
+
+
+
+
+//public virtual int DefaultCommandTimeOut
+//{
+//    get { return 1200; }
+//}
+
+//public virtual DbConnection DefaultConnection
+//{
+//    get
+//    {
+//        var connectionString = ConfigurationManager.ConnectionStrings["Default"];
+
+//        return CreateConnection(connectionString);
+//    }
+//}
+
+//public virtual DbConnection CreateConnection(ConnectionStringSettings connectionString)
+//{
+//    var providerName = connectionString.ProviderName;
+
+//    if (string.IsNullOrWhiteSpace(providerName))
+//        providerName = "System.Data.SqlClient";
+
+//    var factory = DbProviderFactories.GetFactory(providerName);
+//    var connection = factory.CreateConnection();
+//    connection.ConnectionString = connectionString.ConnectionString;
+
+//    return connection;
+//}
